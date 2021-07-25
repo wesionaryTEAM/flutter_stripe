@@ -72,7 +72,6 @@ class _ThemeCardExampleState extends State<ThemeCardExample> {
               child: CardField(
                 autofocus: true,
                 enablePostalCode: postalCodeEnabled,
-                style: TextStyle(fontFamily: 'OtomanopeeOne'),
                 onCardChanged: (_) {},
                 decoration: InputDecoration(
                   labelText: theme.inputDecorationTheme.floatingLabelBehavior ==
