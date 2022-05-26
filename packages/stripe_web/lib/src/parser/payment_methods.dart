@@ -2,8 +2,9 @@ import 'package:flutter_stripe_web/flutter_stripe_web.dart';
 import 'package:stripe_platform_interface/stripe_platform_interface.dart';
 
 import '../js/js.dart' as s;
+import '../stripe_js_sdk/stripe_js.dart' as stripeJs;
 
-extension PaymentMethodParser on s.PaymentMethod {
+extension PaymentMethodParser on stripeJs.PaymentMethod {
   PaymentMethod parse() {
     return PaymentMethod(
       id: id,
@@ -26,7 +27,7 @@ extension PaymentMethodParser on s.PaymentMethod {
   }
 }
 
-extension StripeParser on s.PaymentMethodCard {
+extension StripeParser on stripeJs.Card {
   Card parse() {
     return Card(
       brand: brand,
@@ -38,7 +39,7 @@ extension StripeParser on s.PaymentMethodCard {
   }
 }
 
-extension StripeBillingDetails on s.BillingDetails {
+extension StripeBillingDetails on stripeJs.BillingDetails {
   BillingDetails parse() {
     return BillingDetails(
       email: email,
@@ -49,7 +50,7 @@ extension StripeBillingDetails on s.BillingDetails {
   }
 }
 
-extension StripeBillingAddress on s.BillingDetailsAddress {
+extension StripeBillingAddress on stripeJs.Address {
   Address parse() {
     return Address(
       city: city,

@@ -13,3 +13,4 @@ part './api/payment_methods.dart';
 part './api/setup_intents.dart';
 part './api/shared.dart';
 part './api/tokens.dart';
+part 'stripe_interface.dart';
