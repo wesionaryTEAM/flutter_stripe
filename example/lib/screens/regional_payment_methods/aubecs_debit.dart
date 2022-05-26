@@ -17,11 +17,13 @@ class AubecsExample extends StatefulWidget {
 
 class _AubecsExampleState extends State<AubecsExample> {
   late AubecsEditFormController _controller;
+  late TextEditingController _textController;
   bool isCompleted = false;
   AubecsFormInputDetails? _details;
 
   @override
   void initState() {
+    _textController = TextEditingController();
     _controller = AubecsEditFormController()
       ..addListener(() {
         setState(() {
@@ -34,6 +36,7 @@ class _AubecsExampleState extends State<AubecsExample> {
 
   @override
   void dispose() {
+    _textController.dispose();
     _controller.dispose();
     super.dispose();
   }
@@ -45,6 +48,10 @@ class _AubecsExampleState extends State<AubecsExample> {
       tags: ['Aubecs'],
       padding: EdgeInsets.symmetric(horizontal: 16),
       children: [
+        TextField(
+          controller: _textController,
+        ),
+        SizedBox(height: 20),
         AubecsFormField(
           controller: _controller,
           style: AubecsFormStyle(
